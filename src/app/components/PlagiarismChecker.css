@@ -1,0 +1,342 @@
+.plag-checker-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.plag-checker-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.plag-checker-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plag-checker-header p {
+  color: #64748b;
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.plag-input-area {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
+}
+
+.plag-input-area:focus-within {
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.08);
+  border-color: #c4b5fd;
+}
+
+.plag-input-area textarea {
+  width: 100%;
+  min-height: 400px;
+  border: none;
+  resize: vertical;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #334155;
+  background: transparent;
+  outline: none;
+}
+
+.plag-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.char-count {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.scan-btn {
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.scan-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+.scan-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.scan-btn.scanning {
+  position: relative;
+  overflow: hidden;
+}
+
+.plag-scanning-status {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.scanning-bar {
+  width: 100%;
+  max-width: 600px;
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+}
+
+.scanning-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #6366f1);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.plag-scanning-status p {
+  color: #64748b;
+  font-weight: 500;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.plag-results {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2.5rem;
+}
+
+.result-main-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-circle {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1.5rem;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #f1f5f9;
+  stroke-width: 2.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1s ease 0s;
+  stroke: #ef4444; /* Default to red for similarity */
+}
+
+.percentage {
+  fill: #1e293b;
+  font-family: inherit;
+  font-size: 0.5em;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.verdict-card {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.verdict-card h4 {
+  color: #475569;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.verdict-card p {
+  color: #334155;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.sources-list {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.02);
+}
+
+.sources-list h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+.source-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.source-item:hover {
+  background: #ffffff;
+  border-color: #c4b5fd;
+  transform: scale(1.01);
+  box-shadow: 0 8px 16px rgba(124, 58, 237, 0.05);
+}
+
+.source-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.source-title {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.05rem;
+}
+
+.source-url {
+  color: #7c3aed;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.source-match {
+  text-align: right;
+  min-width: 100px;
+}
+
+.match-val {
+  font-weight: 800;
+  color: #ef4444;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.match-tiny-bar {
+  height: 6px;
+  width: 100%;
+  background: #e2e8f0;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.match-tiny-bar-fill {
+  height: 100%;
+  background: #ef4444;
+  border-radius: 10px;
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .plag-results {
+    grid-template-columns: 1fr;
+  }
+}
+
+.plag-error-alert {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.error-icon {
+  background: #ef4444;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.error-msg h4 {
+  color: #991b1b;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.error-msg p {
+  color: #b91c1c;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

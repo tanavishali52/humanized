@@ -7,14 +7,19 @@
   --primary-soft: rgba(47, 111, 237, 0.14);
   --border: #dbe3f5;
   min-height: 100vh;
-  padding: 1.2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
   color: var(--text);
   background: linear-gradient(180deg, var(--bg) 0%, #eef3ff 100%);
 }
 
-.main[data-theme="purple"] {
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+[data-theme="purple"] .main {
   --bg: #fbf7ff;
   --surface: #ffffff;
   --text: #211736;
@@ -24,7 +29,7 @@
   --border: #eadcfb;
 }
 
-.main[data-theme="mint"] {
+[data-theme="mint"] .main {
   --bg: #f4fffb;
   --surface: #ffffff;
   --text: #0c2b22;
