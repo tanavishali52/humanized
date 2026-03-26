@@ -1,7 +1,7 @@
 .footer-container {
   padding: 6rem 2rem 2rem;
-  background-color: #f8faff;
-  border-top: 1px solid #eef2f8;
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
   width: 100%;
 }
 
@@ -30,7 +30,7 @@
 .logo-icon {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #a855f7, #7c3aed);
+  background: linear-gradient(135deg, var(--primary), #a855f7);
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -51,7 +51,7 @@
   position: absolute;
   width: 10px;
   height: 4px;
-  background: #7c3aed;
+  background: var(--primary);
   bottom: -2px;
   right: -4px;
   transform: rotate(45deg);
@@ -108,7 +108,7 @@
 }
 
 .footer-email:hover {
-  color: #7c3aed;
+  color: var(--primary);
 }
 
 .footer-links-section {
@@ -140,7 +140,7 @@
 }
 
 .footer-links-list a:hover {
-  color: #7c3aed;
+  color: var(--primary);
 }
 
 @media (max-width: 768px) {
