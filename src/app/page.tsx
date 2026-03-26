@@ -99,23 +99,6 @@ export default function Home() {
 
         <Pricing />
 
-        <section id="faq" className={styles.section}>
-          <h2>FAQ</h2>
-          <div className={styles.faqList}>
-            <details className={styles.faqItem}>
-              <summary>Does it change the meaning of my text?</summary>
-              <p>No. The prompts enforce meaning preservation and retain key facts, names, and numbers.</p>
-            </details>
-            <details className={styles.faqItem}>
-              <summary>Which strength should I use?</summary>
-              <p>Use low for light cleanup, medium for balanced results, and high for strongest humanization.</p>
-            </details>
-            <details className={styles.faqItem}>
-              <summary>Why use multi-pass rewriting?</summary>
-              <p>It first removes robotic patterns, then humanizes style, and finally polishes readability.</p>
-            </details>
-          </div>
-        </section>
       </div>
     </main>
   );

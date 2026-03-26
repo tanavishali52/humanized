@@ -1,15 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
+import { MdOutlinePalette } from 'react-icons/md';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
-  const [theme, setTheme] = useState<"blue" | "purple" | "mint">("blue");
+  const [theme, setTheme] = useState<"blue" | "purple" | "mint" | "amber" | "rose">("blue");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     setTheme((prev) => {
-      const next = prev === "blue" ? "purple" : prev === "purple" ? "mint" : "blue";
+      const themes: ("blue" | "purple" | "mint" | "amber" | "rose")[] = ["blue", "purple", "mint", "amber", "rose"];
+      const nextIndex = (themes.indexOf(prev) + 1) % themes.length;
+      const next = themes[nextIndex];
       document.body.setAttribute('data-theme', next);
       return next;
     });
@@ -30,8 +33,9 @@ const Navbar: React.FC = () => {
         <nav className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <a href="/about" onClick={() => setIsMenuOpen(false)}>About</a>
           <a href="/plagiarism" onClick={() => setIsMenuOpen(false)}>Plagiarism</a>
+          <a href="/grammar" onClick={() => setIsMenuOpen(false)}>Grammar</a>
           <a href="/#pricing" onClick={() => setIsMenuOpen(false)}>Pricing</a>
-          <a href="/#faq" onClick={() => setIsMenuOpen(false)}>FAQ</a>
+          <a href="/faq" onClick={() => setIsMenuOpen(false)}>FAQ</a>
         </nav>
 
         <div className="navbar-actions">
@@ -40,7 +44,7 @@ const Navbar: React.FC = () => {
             aria-label="Change theme color"
             onClick={toggleTheme}
           >
-            🎨
+            <MdOutlinePalette />
           </button>
           
           <button 

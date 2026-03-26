@@ -1,11 +1,4 @@
 .main {
-  --bg: #f7f9ff;
-  --surface: #ffffff;
-  --text: #10172a;
-  --muted: #5b647a;
-  --primary: #2f6fed;
-  --primary-soft: rgba(47, 111, 237, 0.14);
-  --border: #dbe3f5;
   min-height: 100vh;
   width: 100%;
   color: var(--text);
@@ -17,26 +10,6 @@
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
-}
-
-[data-theme="purple"] .main {
-  --bg: #fbf7ff;
-  --surface: #ffffff;
-  --text: #211736;
-  --muted: #685a82;
-  --primary: #8f4ff4;
-  --primary-soft: rgba(143, 79, 244, 0.16);
-  --border: #eadcfb;
-}
-
-[data-theme="mint"] .main {
-  --bg: #f4fffb;
-  --surface: #ffffff;
-  --text: #0c2b22;
-  --muted: #4e7167;
-  --primary: #12b886;
-  --primary-soft: rgba(18, 184, 134, 0.16);
-  --border: #cff2e8;
 }
 
 .navbar {

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
+import { HiExclamationTriangle } from 'react-icons/hi2';
 import './PlagiarismChecker.css';
 
 interface Source {
@@ -89,7 +90,7 @@ const PlagiarismChecker: React.FC = () => {
 
       {error && (
         <div className="plag-error-alert fadeIn">
-          <div className="error-icon">!</div>
+          <div className="error-icon"><HiExclamationTriangle /></div>
           <div className="error-msg">
             <h4>Scan Error</h4>
             <p>{error}</p>

@@ -85,9 +85,56 @@ body {
   overflow-x: hidden;
 }
 
+/* Theme System */
+:root {
+  --primary: #2f6fed;
+  --primary-soft: rgba(47, 111, 237, 0.14);
+  --bg: #f7f9ff;
+  --border: #dbe3f5;
+  --text: #10172a;
+  --muted: #5b647a;
+}
+
+[data-theme="purple"] {
+  --primary: #8f4ff4;
+  --primary-soft: rgba(143, 79, 244, 0.16);
+  --bg: #fbf7ff;
+  --border: #eadcfb;
+  --text: #211736;
+  --muted: #685a82;
+}
+
+[data-theme="mint"] {
+  --primary: #12b886;
+  --primary-soft: rgba(18, 184, 134, 0.16);
+  --bg: #f4fffb;
+  --border: #cff2e8;
+  --text: #0c2b22;
+  --muted: #4e7167;
+}
+
+[data-theme="amber"] {
+  --primary: #f59e0b;
+  --primary-soft: rgba(245, 158, 11, 0.16);
+  --bg: #fffbeb;
+  --border: #fef3c7;
+  --text: #451a03;
+  --muted: #78350f;
+}
+
+[data-theme="rose"] {
+  --primary: #e11d48;
+  --primary-soft: rgba(225, 29, 72, 0.16);
+  --bg: #fff1f2;
+  --border: #ffe4e6;
+  --text: #4c0519;
+  --muted: #881337;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #f8faff;
+  color: var(--text);
+  background: var(--bg);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {

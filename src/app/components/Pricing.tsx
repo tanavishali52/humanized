@@ -1,4 +1,5 @@
 import React from 'react';
+import { HiCheck } from 'react-icons/hi';
 import './Pricing.css';
 
 interface PricingPlan {
@@ -81,9 +82,7 @@ const Pricing: React.FC = () => {
               {plan.features.map((feature, fIndex) => (
                 <li key={fIndex}>
                   <span className="check-icon">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-                    </svg>
+                    <HiCheck />
                   </span>
                   {feature}
                 </li>
@@ -96,19 +95,7 @@ const Pricing: React.FC = () => {
         ))}
       </div>
 
-      <div className="payment-methods">
-        <h4 className="payment-title">Supported Payment Methods</h4>
-        <div className="payment-icons">
-          {/* Simple representations of payment icons */}
-          <div className="payment-icon stripe">Stripe</div>
-          <div className="payment-icon visa">VISA</div>
-          <div className="payment-icon mastercard">MasterCard</div>
-          <div className="payment-icon amex">AMEX</div>
-          <div className="payment-icon apple-pay">Apple Pay</div>
-          <div className="payment-icon google-pay">Google Pay</div>
-          <div className="payment-icon paypal">PayPal</div>
-        </div>
-      </div>
+
     </section>
   );
 };
