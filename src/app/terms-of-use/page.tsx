@@ -33,7 +33,7 @@ const TermsOfUse: React.FC = () => {
 
           <h2>3. Disclaimer of Warranties</h2>
           <p>
-            MyDetector provides its services "as is" and "as available." While we strive for high accuracy in AI detection and humanization, we do not guarantee that our results will always be 100% accurate or that humanized text will pass all future AI filters.
+            MyDetector provides its services &quot;as is&quot; and &quot;as available.&quot; While we strive for high accuracy in AI detection and humanization, we do not guarantee that our results will always be 100% accurate or that humanized text will pass all future AI filters.
           </p>
 
           <h2>4. Limitation of Liability</h2>

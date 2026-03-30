@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { HiOutlineSearch, HiPlus, HiMinus } from 'react-icons/hi';
+import { HiOutlineSearch, HiChevronDown } from 'react-icons/hi';
 import './FAQ.css';
 
 interface FAQItem {
@@ -96,13 +96,13 @@ const FAQ: React.FC = () => {
   return (
     <div className="faq-container">
       <div className="faq-header">
-        <h1>Frequently Asked Questions</h1>
-        <p>Everything you need to know about our AI-powered content tools.</p>
+        <h1>Got Questions?</h1>
+        <p>Everything you need to know about our AI-powered humanization and detection engines.</p>
         
         <div className="faq-search">
           <input 
             type="text" 
-            placeholder="Search for a topic or question..." 
+            placeholder="Search for a topic or keyword..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -127,7 +127,7 @@ const FAQ: React.FC = () => {
                         aria-expanded={isOpen}
                       >
                         {item.question}
-                        <span className="faq-toggle-icon">{isOpen ? <HiMinus /> : <HiPlus />}</span>
+                        <span className="faq-toggle-icon"><HiChevronDown /></span>
                       </button>
                       <div className="faq-answer">
                         <p>{item.answer}</p>
@@ -140,15 +140,15 @@ const FAQ: React.FC = () => {
           ))
         ) : (
           <div className="no-results">
-            <p>No results found for "{searchTerm}". Try a different keyword.</p>
+            <p>No results found for &quot;{searchTerm}&quot;. Try focusing on keywords like &quot;bypass&quot; or &quot;privacy&quot;.</p>
           </div>
         )}
       </div>
 
       <div className="faq-footer">
-        <h3>Still have questions?</h3>
-        <p>We're here to help you get the most out of your content.</p>
-        <a href="mailto:support@mydetector.ai" className="contact-btn">Contact Support</a>
+        <h3>Still curious?</h3>
+        <p>Our support team is ready to help you with any unique technical needs.</p>
+        <a href="mailto:support@mydetector.ai" className="contact-btn">Contact Our Team</a>
       </div>
     </div>
   );

@@ -61,17 +61,21 @@ const plans: PricingPlan[] = [
 
 const Pricing: React.FC = () => {
   return (
-    <section className="pricing-section">
+    <section id="pricing" className="pricing-section">
       <div className="pricing-header">
-        <h2 className="pricing-title">Subscription Plans and Pricing</h2>
+        <h2 className="pricing-title">Flexible Plans for Every Creator</h2>
         <p className="pricing-subtitle">
-          Choose the perfect plan to boost your productivity with our advanced AI humanization tools.
+          Scale your content with production-ready AI humanization tools. Choose the plan that fits your workflow.
         </p>
       </div>
 
       <div className="pricing-grid">
         {plans.map((plan, index) => (
-          <div key={index} className={`pricing-card ${plan.isCurrent ? 'current' : ''}`}>
+          <div 
+            key={index} 
+            className={`pricing-card ${plan.isCurrent ? 'current' : ''} ${plan.name === 'Pro' ? 'featured' : ''}`}
+          >
+            {plan.name === 'Pro' && <div className="popular-badge">Most Popular</div>}
             <h3 className="plan-name">{plan.name}</h3>
             <p className="plan-tagline">{plan.tagline}</p>
             <div className="plan-price">
@@ -94,8 +98,6 @@ const Pricing: React.FC = () => {
           </div>
         ))}
       </div>
-
-
     </section>
   );
 };

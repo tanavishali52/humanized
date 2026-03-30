@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { HiExclamation, HiArrowNarrowRight, HiCheckCircle } from 'react-icons/hi';
+import Skeleton from './Skeleton';
 import './GrammarChecker.css';
 
 interface GrammarError {
@@ -32,16 +33,9 @@ const GrammarChecker: React.FC = () => {
     setError(null);
     setProgress(0);
 
-    // Initial dummy scan simulation for UX
     const interval = setInterval(() => {
-      setProgress(p => {
-        if (p >= 95) {
-          clearInterval(interval);
-          return 95;
-        }
-        return p + 5;
-      });
-    }, 120);
+      setProgress(p => (p >= 90 ? 90 : p + 5));
+    }, 150);
 
     try {
       const res = await fetch("/api/grammar", {
@@ -56,11 +50,10 @@ const GrammarChecker: React.FC = () => {
       setProgress(100);
       setResult(data);
     } catch (e) {
-      console.error(e);
       setError(e instanceof Error ? e.message : "An unexpected error occurred.");
     } finally {
       clearInterval(interval);
-      setLoading(false);
+      setTimeout(() => setLoading(false), 300);
     }
   };
 
@@ -75,11 +68,11 @@ const GrammarChecker: React.FC = () => {
   return (
     <div className="grammar-checker-container">
       <div className="grammar-checker-header">
-        <h1>Advanced Grammar & Style Assistant</h1>
-        <p>Refine your writing with AI-powered corrections for grammar, spelling, and professional style.</p>
+        <h1>Grammar & Style Assistant</h1>
+        <p>Refine your writing with AI-powered corrections and professional style suggestions.</p>
       </div>
 
-      <div className="grammar-input-area">
+      <div className="grammar-input-area glass-card">
         <textarea
           placeholder="Type or paste your text here (minimum 10 characters)..."
           value={input}
@@ -89,44 +82,68 @@ const GrammarChecker: React.FC = () => {
         <div className="grammar-controls">
           <span className="char-count">{input.length} characters</span>
           <button 
-            className={`check-btn ${loading ? 'checking' : ''}`}
+            className="check-btn"
             onClick={handleCheck}
             disabled={!canCheck || loading}
           >
-            {loading ? `Analyzing... ${progress}%` : "Check Grammar"}
+            {loading ? "Analyzing..." : "Check Grammar"}
           </button>
         </div>
       </div>
-
-      {error && (
-        <div className="grammar-error-alert fadeIn">
-          <div className="error-icon"><HiExclamation /></div>
-          <div className="error-msg">
-            <h4>Check Failed</h4>
-            <p>{error}</p>
-          </div>
-        </div>
-      )}
 
       {loading && (
         <div className="grammar-checking-status">
           <div className="checking-bar">
             <div className="checking-bar-fill" style={{ width: `${progress}%` }}></div>
           </div>
-          <p>Analyzing syntax, semantics, and stylistic flow...</p>
+          <p>Analyzing syntax and stylistic flow...</p>
         </div>
       )}
 
-      {result && (
+      {error && (
+        <div className="grammar-error-alert fadeIn">
+          <div className="error-icon"><HiExclamation /></div>
+          <div className="error-msg">
+            <h4>Analysis Error</h4>
+            <p>{error}</p>
+          </div>
+        </div>
+      )}
+
+      {loading ? (
         <div className="grammar-results fadeIn">
-          <div className="result-main-card">
+          <div className="result-main-card glass-card">
+            <div className="result-card-header">
+              <Skeleton type="title" width="200px" />
+              <Skeleton type="button" />
+            </div>
+            <div className="corrected-text-box">
+              <Skeleton type="text" width="90%" />
+              <Skeleton type="text" width="100%" />
+              <Skeleton type="text" width="95%" />
+            </div>
+            <div className="stats-summary">
+              <div className="stat-item"><Skeleton type="text" width="40px" /></div>
+              <div className="stat-item"><Skeleton type="text" width="40px" /></div>
+              <div className="stat-item"><Skeleton type="text" width="40px" /></div>
+            </div>
+          </div>
+          <div className="errors-list">
+            <Skeleton type="title" width="150px" />
+            <Skeleton type="card" height="100px" />
+            <Skeleton type="card" height="100px" />
+          </div>
+        </div>
+      ) : result && (
+        <div className="grammar-results fadeIn">
+          <div className="result-main-card glass-card">
             <div className="result-card-header">
               <h3>Corrected Text</h3>
               <button 
                 className={`copy-btn ${copied ? 'copied' : ''}`} 
                 onClick={handleCopy}
               >
-                {copied ? "Copied!" : "Copy Corrected Text"}
+                {copied ? "Copied!" : "Copy Text"}
               </button>
             </div>
             <div className="corrected-text-box">
@@ -148,7 +165,7 @@ const GrammarChecker: React.FC = () => {
                 <span className="stat-value">
                   {result.errors.filter(e => e.type === 'style').length}
                 </span>
-                <span className="stat-label">Stlye Suggestions</span>
+                <span className="stat-label">Style Tips</span>
               </div>
             </div>
           </div>
@@ -172,7 +189,7 @@ const GrammarChecker: React.FC = () => {
             ) : (
               <div className="no-errors-card">
                 <div className="success-icon"><HiCheckCircle /></div>
-                <p style={{ color: 'black' }}>Perfect! No grammar or spelling errors were detected in your text.</p>
+                <p>Perfect! Your text is clear and correct.</p>
               </div>
             )}
           </div>

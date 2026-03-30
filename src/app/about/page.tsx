@@ -1,64 +1,60 @@
 import React from 'react';
+import Link from 'next/link';
+import { HiCheckBadge, HiOutlineLightBulb, HiOutlineShieldCheck, HiOutlineUserGroup, HiArrowLongLeft } from 'react-icons/hi2';
 import './about.css';
 
 const AboutPage: React.FC = () => {
   return (
     <main className="about-container">
-      <div className="about-header">
-        <h1>About MyDetector</h1>
+      <header className="about-header">
+        <h1>Our Story</h1>
+        <p className="large-subtitle">Restoring the human touch to digital content.</p>
+      </header>
+
+      <div className="about-hero">
+        <div className="about-hero-text">
+          <h2>Bridging the gap between AI and Authenticity</h2>
+          <p>
+            Welcome to <strong>MyDetector</strong>. We believe that while AI is a powerful tool, it should never replace the unique voice and creative spark that only a human can provide.
+          </p>
+          <p>
+            In an era of automated content, we provide the tools to ensure your writing remains genuine, resonant, and undetectable by robotic filters.
+          </p>
+        </div>
+        <div className="about-hero-image glass-card" style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <HiOutlineLightBulb size={120} color="var(--primary)" />
+        </div>
       </div>
 
-      <div className="about-card">
-        <section className="about-section">
-          <h2>Who We Are</h2>
-          <div className="divider"></div>
+      <div className="about-grid">
+        <div className="about-card glass-card">
+          <HiOutlineShieldCheck size={40} color="var(--primary)" />
+          <h3>Our Mission</h3>
           <p>
-            Welcome to <strong>MyDetector</strong>, your trusted companion in maintaining the integrity of your text. We specialize in detecting AI-generated content and providing you with tools to humanize it. Whether you're a writer, student, or professional, our platform is designed to help you create content that resonates with a human audience. For detailed terms of use and important notices, please visit our <a href="#">Terms of Use</a> page.
+            To empower writers, students, and professionals with sophisticated AI-driven tools that protect their creative integrity and ensure their work meets the highest standards of authenticity.
           </p>
-        </section>
+        </div>
 
-        <section className="about-section">
-          <h2>Our Mission</h2>
-          <div className="divider"></div>
-          <p>
-            At MyDetector, we aim to bridge the gap between machine-generated and human-created content. With the rise of AI tools, ensuring your writing maintains authenticity and avoids detection by AI filters has never been more critical. Our mission is to empower users with a simple yet powerful solution to refine their text and meet the highest standards of quality and credibility.
-          </p>
-        </section>
-
-        <section className="about-section">
-          <h2>What We Offer</h2>
-          <div className="divider"></div>
-          <ul className="offer-list">
-            <li>
-              <strong>AI Detection:</strong> Use our advanced AI detector to analyze your text and identify if it might be flagged as AI-generated.
-            </li>
-            <li>
-              <strong>Humanization Tool:</strong> Click on '<em>Humanize</em>' to transform your text, ensuring it passes all AI detectors while enhancing readability and natural flow.
-            </li>
-            <li>
-              <strong>Seamless Workflow:</strong> Our platform offers a user-friendly interface that simplifies the process of text refinement.
-            </li>
-          </ul>
-        </section>
-
-        <section className="about-section">
-          <h2>Why Choose Us?</h2>
-          <div className="divider"></div>
-          <p className="intro-text">
-            We understand the importance of producing content that feels genuine. Here's what sets us apart:
-          </p>
+        <div className="about-card glass-card">
+          <HiOutlineUserGroup size={40} color="var(--primary)" />
+          <h3>Why Choose Us?</h3>
           <ul className="benefits-list">
-            <li>
-              <strong>Accuracy:</strong> Our AI detector is built on the latest technology to provide precise results.
-            </li>
-            <li>
-              <strong>Reliability:</strong> Our humanization tool guarantees your text meets the standards of natural, human-like writing.
-            </li>
-            <li>
-              <strong>User-Centric Design:</strong> We've created a platform that's easy to use for everyone, from students to professionals.
-            </li>
+            <li><HiCheckBadge className="check-icon" /> <strong>Accuracy:</strong> Powered by the latest neural models.</li>
+            <li><HiCheckBadge className="check-icon" /> <strong>Reliability:</strong> Consistent results you can trust.</li>
+            <li><HiCheckBadge className="check-icon" /> <strong>Privacy:</strong> Your data is never stored or shared.</li>
           </ul>
-        </section>
+        </div>
+      </div>
+
+      <div className="about-footer">
+        <h2>Ready to humanize your content?</h2>
+        <p style={{ marginBottom: '2rem', color: 'var(--muted)' }}>Join thousands of users who trust MyDetector for their writing needs.</p>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <Link href="/" className="primaryButton" style={{ textDecoration: 'none' }}>Get Started</Link>
+          <Link href="/" className="back-link">
+            <HiArrowLongLeft /> Back to Home
+          </Link>
+        </div>
       </div>
     </main>
   );
