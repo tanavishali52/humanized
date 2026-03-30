@@ -1,6 +1,5 @@
 import React from 'react';
 import PlagiarismChecker from '../components/PlagiarismChecker';
-import styles from '../page.module.css';
 
 export const metadata = {
   title: "Plagiarism Checker - MyDetector",
@@ -9,7 +8,7 @@ export const metadata = {
 
 export default function PlagiarismPage() {
   return (
-    <main className={styles.main}>
+    <main className="min-h-screen w-full pt-32 bg-[radial-gradient(circle_at_top_right,var(--primary-soft),transparent_40%),radial-gradient(circle_at_bottom_left,var(--primary-soft),transparent_40%)]">
       <PlagiarismChecker />
     </main>
   );

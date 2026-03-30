@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { MdOutlinePalette } from 'react-icons/md';
-import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const [theme, setTheme] = useState<"blue" | "purple" | "mint" | "amber" | "rose">("blue");
@@ -13,7 +12,7 @@ const Navbar: React.FC = () => {
       const themes: ("blue" | "purple" | "mint" | "amber" | "rose")[] = ["blue", "purple", "mint", "amber", "rose"];
       const nextIndex = (themes.indexOf(prev) + 1) % themes.length;
       const next = themes[nextIndex];
-      document.body.setAttribute('data-theme', next);
+      document.documentElement.setAttribute('data-theme', next);
       return next;
     });
   };
@@ -21,40 +20,67 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="navbar-container">
-      <div className="navbar-content">
-        <a className="navbar-brand" href="/">
-          <div className="navbar-logo-icon">
-            <span className="logo-ai">AI</span>
+    <header
+      className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b"
+      style={{ background: 'var(--glass-bg)', borderColor: 'var(--glass-border)', boxShadow: 'var(--glass-shadow)' }}
+    >
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <a className="flex items-center gap-2 sm:gap-3 no-underline" href="/">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-theme flex items-center justify-center">
+            <span className="text-white text-[10px] sm:text-xs font-extrabold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>AI</span>
           </div>
-          <span className="logo-text">MyDetector</span>
+          <span className="text-base sm:text-lg font-extrabold tracking-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>MyDetector</span>
         </a>
-        
-        <nav className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <a href="/about" onClick={() => setIsMenuOpen(false)}>About</a>
-          <a href="/plagiarism" onClick={() => setIsMenuOpen(false)}>Plagiarism</a>
-          <a href="/grammar" onClick={() => setIsMenuOpen(false)}>Grammar</a>
-          <a href="/#pricing" onClick={() => setIsMenuOpen(false)}>Pricing</a>
-          <a href="/faq" onClick={() => setIsMenuOpen(false)}>FAQ</a>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          {['About', 'Plagiarism', 'Grammar', 'Pricing', 'FAQ'].map((label) => {
+            const href = label === 'Pricing' ? '/#pricing' : `/${label.toLowerCase()}`;
+            return (
+              <a key={label} href={href} className="text-sm font-semibold no-underline transition-all duration-300 hover:opacity-80" style={{ color: 'var(--muted)' }}
+                onMouseEnter={e => (e.currentTarget.style.color = 'var(--primary)')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--muted)')}
+              >{label}</a>
+            );
+          })}
         </nav>
 
-        <div className="navbar-actions">
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <nav className="md:hidden fixed top-[56px] sm:top-[64px] left-0 w-full flex flex-col p-6 sm:p-8 shadow-lg gap-4 z-50"
+            style={{ background: 'white', borderBottom: '1px solid var(--border)' }}
+          >
+            {['About', 'Plagiarism', 'Grammar', 'Pricing', 'FAQ'].map((label) => {
+              const href = label === 'Pricing' ? '/#pricing' : `/${label.toLowerCase()}`;
+              return (
+                <a key={label} href={href} onClick={() => setIsMenuOpen(false)} className="text-base font-semibold no-underline transition-all duration-300"
+                  style={{ color: 'var(--muted)' }}
+                >{label}</a>
+              );
+            })}
+          </nav>
+        )}
+
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
-            className="navbar-theme-button"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300"
+            style={{ border: '1px solid var(--border)', background: 'white', color: 'var(--muted)' }}
             aria-label="Change theme color"
             onClick={toggleTheme}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.color = 'var(--primary)'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)'; }}
           >
-            <MdOutlinePalette />
+            <MdOutlinePalette size={18} />
           </button>
-          
-          <button 
-            className="hamburger-menu" 
+
+          <button
+            className="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
-            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
-            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
+            <div className="w-5 h-[2px] rounded transition-all duration-300" style={{ background: 'var(--text)', transform: isMenuOpen ? 'rotate(45deg) translateY(7px)' : 'none' }}></div>
+            <div className="w-5 h-[2px] rounded transition-all duration-300" style={{ background: 'var(--text)', opacity: isMenuOpen ? 0 : 1 }}></div>
+            <div className="w-5 h-[2px] rounded transition-all duration-300" style={{ background: 'var(--text)', transform: isMenuOpen ? 'rotate(-45deg) translateY(-7px)' : 'none' }}></div>
           </button>
         </div>
       </div>

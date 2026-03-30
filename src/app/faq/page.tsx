@@ -1,6 +1,5 @@
 import React from 'react';
 import FAQ from '../components/FAQ';
-import styles from '../page.module.css';
 
 export const metadata = {
   title: "Frequently Asked Questions - MyDetector",
@@ -9,7 +8,7 @@ export const metadata = {
 
 export default function FAQPage() {
   return (
-    <main className={styles.main}>
+    <main className="min-h-screen w-full pt-32 bg-[var(--bg)]">
       <FAQ />
     </main>
   );

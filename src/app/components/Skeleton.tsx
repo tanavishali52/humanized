@@ -1,5 +1,4 @@
 import React from 'react';
-import './Skeleton.css';
 
 interface SkeletonProps {
   className?: string;
@@ -16,16 +15,17 @@ const Skeleton: React.FC<SkeletonProps> = ({
   height,
   style 
 }) => {
-  const combinedStyle = {
-    ...style,
-    width: width || (type === 'text' ? '100%' : width),
-    height: height || style?.height,
+  const typeClasses: Record<string, string> = {
+    text: 'skeleton-text',
+    title: 'skeleton-title',
+    button: 'skeleton-button',
+    card: 'skeleton-card',
   };
 
   return (
     <div 
-      className={`skeleton skeleton-${type} ${className}`} 
-      style={combinedStyle}
+      className={`skeleton ${typeClasses[type] || ''} ${className}`}
+      style={{ width, height, ...style }}
     />
   );
 };
