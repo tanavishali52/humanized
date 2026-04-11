@@ -11,12 +11,12 @@ const PrivacyPolicy: React.FC = () => {
 
         <article className="flex flex-col gap-6">
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            At <strong className="text-[var(--text)]">MyDetector</strong>, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard the text and information you provide when using our AI detection and humanization tools.
+            At <strong className="text-[var(--text)]">Humanize AI</strong>, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard the text and information you provide when using our AI detection and humanization tools.
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">1. Information We Collect</h2>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            When you use MyDetector, we collect the text you submit for analysis. This text is processed by our AI algorithms to provide detection results or humanized variations. We do not store your original or transformed text beyond the session required to provide the service, unless explicitly requested for training purposes (with your consent).
+            When you use Humanize AI, we collect the text you submit for analysis. This text is processed by our AI algorithms to provide detection results or humanized variations. We do not store your original or transformed text beyond the session required to provide the service, unless explicitly requested for training purposes (with your consent).
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">2. How We Use Your Data</h2>
@@ -35,12 +35,12 @@ const PrivacyPolicy: React.FC = () => {
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">4. Third-Party Services</h2>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            MyDetector may use third-party AI models (such as OpenAI) to assist in text processing. We ensure that these partners adhere to strict privacy standards and do not use your data for their own independent purposes.
+            Humanize AI may use third-party AI models (such as OpenAI) to assist in text processing. We ensure that these partners adhere to strict privacy standards and do not use your data for their own independent purposes.
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">5. Contact Us</h2>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href="mailto:support@mydetector.ai" className="text-[var(--primary)] font-semibold no-underline hover:underline">support@mydetector.ai</a>.
+            If you have any questions about this Privacy Policy or how we handle your data, please contact us at <a href="mailto:support@Humanize AI.ai" className="text-[var(--primary)] font-semibold no-underline hover:underline">support@Humanize AI.ai</a>.
           </p>
         </article>
 

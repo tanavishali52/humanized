@@ -1,7 +1,9 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { MdOutlinePalette } from 'react-icons/md';
+import LogoIcon from './LogoIcon';
 
 const Navbar: React.FC = () => {
   const [theme, setTheme] = useState<"blue" | "purple" | "mint" | "amber" | "rose">("blue");
@@ -25,11 +27,9 @@ const Navbar: React.FC = () => {
       style={{ background: 'var(--glass-bg)', borderColor: 'var(--glass-border)', boxShadow: 'var(--glass-shadow)' }}
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-        <a className="flex items-center gap-2 sm:gap-3 no-underline" href="/">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-theme flex items-center justify-center">
-            <span className="text-white text-[10px] sm:text-xs font-extrabold tracking-wider" style={{ fontFamily: 'var(--font-heading)' }}>AI</span>
-          </div>
-          <span className="text-base sm:text-lg font-extrabold tracking-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>MyDetector</span>
+        <a className="flex items-center gap-2 sm:gap-3 no-underline group" href="/">
+          <LogoIcon size={36} />
+          <span className="text-base sm:text-lg font-extrabold tracking-tight group-hover:text-theme transition-colors" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>Humanize AI</span>
         </a>
 
         {/* Desktop nav */}

@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Humanize AI Text: Undetectable AI Humanizer & Rewriter | MyDetector",
+  title: "Humanize AI Text: Undetectable AI Humanizer & Rewriter | Humanize AI",
   description: "Transform AI-generated text from ChatGPT, Bard, and Claude into natural, human-like content. Our advanced rewriter ensures your work remains authentic and undetectable.",
 };
 

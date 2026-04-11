@@ -2,7 +2,7 @@ import React from 'react';
 import PlagiarismChecker from '../components/PlagiarismChecker';
 
 export const metadata = {
-  title: "Plagiarism Checker - MyDetector",
+  title: "Plagiarism Checker - Humanize AI",
   description: "Check the originality of your content with our advanced plagiarism detection tool.",
 };
 

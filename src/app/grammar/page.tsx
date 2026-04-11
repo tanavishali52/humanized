@@ -2,7 +2,7 @@ import React from 'react';
 import GrammarChecker from '../components/GrammarChecker';
 
 export const metadata = {
-  title: "AI Grammar Checker - MyDetector",
+  title: "AI Grammar Checker - Humanize AI",
   description: "Improve your writing with our advanced AI grammar and style assistant.",
 };
 

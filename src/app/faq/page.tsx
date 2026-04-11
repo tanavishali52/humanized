@@ -2,7 +2,7 @@ import React from 'react';
 import FAQ from '../components/FAQ';
 
 export const metadata = {
-  title: "Frequently Asked Questions - MyDetector",
+  title: "Frequently Asked Questions - Humanize AI",
   description: "Find answers to all your questions about our AI Humanizer, Plagiarism Checker, and AI Grammar Assistant.",
 };
 

@@ -70,7 +70,12 @@
     overflow-x: hidden;
     font-family: var(--font-body);
     color: var(--text);
-    background: var(--bg);
+    background-color: var(--bg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     line-height: 1.6;
   }
 

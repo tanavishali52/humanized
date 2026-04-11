@@ -11,12 +11,12 @@ const RefundPolicy: React.FC = () => {
 
         <article className="flex flex-col gap-6">
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            At <strong className="text-[var(--text)]">MyDetector</strong>, we want our customers to be satisfied with our services. However, due to the digital nature of our AI detection and humanization tools, we have established the following Refund Policy.
+            At <strong className="text-[var(--text)]">Humanize AI</strong>, we want our customers to be satisfied with our services. However, due to the digital nature of our AI detection and humanization tools, we have established the following Refund Policy.
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">1. Digital Products Policy</h2>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            Since MyDetector provides immediate access to digital services (quotas and AI processing), all sales are generally final. Once a subscription is activated or quotas are used, we cannot offer a full refund for the processed data.
+            Since Humanize AI provides immediate access to digital services (quotas and AI processing), all sales are generally final. Once a subscription is activated or quotas are used, we cannot offer a full refund for the processed data.
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">2. Eligibility for Refunds</h2>
@@ -34,7 +34,7 @@ const RefundPolicy: React.FC = () => {
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">4. How to Request a Refund</h2>
           <p className="text-base leading-relaxed text-[var(--muted)]">
-            To request a refund, please contact our support team at <a href="mailto:support@mydetector.ai" className="text-[var(--primary)] font-semibold no-underline hover:underline">support@mydetector.ai</a> within 7 days of the transaction. Please include your account email and transaction ID.
+            To request a refund, please contact our support team at <a href="mailto:support@Humanize AI.ai" className="text-[var(--primary)] font-semibold no-underline hover:underline">support@Humanize AI.ai</a> within 7 days of the transaction. Please include your account email and transaction ID.
           </p>
 
           <h2 className="text-2xl font-bold text-[var(--text)] font-[var(--font-heading)] mt-4">5. Processing Time</h2>
